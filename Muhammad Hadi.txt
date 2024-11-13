@@ -1,0 +1,72 @@
+/******************************************************************************
+
+                            Online C# Compiler.
+                Code, Compile, Run and Debug C# program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+using System;
+
+class HelloWorld {
+    static void Main() {
+        Console.Write("Enter Your Name: ");
+        string Name = Console.ReadLine();
+
+        Console.Write("Is the Vegetable Cart available? (yes/no): ");
+        string vegetableCartInput = Console.ReadLine().ToLower();  
+        
+        bool VegetableCartFound = vegetableCartInput == "yes";  
+
+        if (VegetableCartFound) {
+            Console.WriteLine(Name + " is going to VegetableCart");
+        } else {
+            Console.WriteLine(Name + " is going to meat shop");
+
+            Console.WriteLine("Enter Your TotalPrice");
+            int TotalPrice = Convert.ToInt32(Console.ReadLine());
+            double DiscountAmount = TotalPrice;
+
+            if (TotalPrice >= 35000) {
+                Console.WriteLine("You will be awarded a special discount.");
+                double specialDiscount = TotalPrice * 0.75;
+                DiscountAmount = TotalPrice - specialDiscount;
+
+                Console.WriteLine("Your Actual price is Rs" + TotalPrice);
+                Console.WriteLine("After Discount, Your price is Rs" + DiscountAmount);
+            } else {
+                Console.WriteLine("Your amount is very low, you will not receive any discount.");
+                Console.WriteLine("Kindly pay Rs" + TotalPrice);
+            }
+
+            if (DiscountAmount >= 17000) {
+                Console.Write("Enter Your Payment Method (Cash or Card): ");
+                string PaymentMethod = Console.ReadLine();
+
+                if (PaymentMethod == "Card") {  
+                    if (DiscountAmount < 17000) {
+                        Console.WriteLine("Sorry, we do not accept card payments for amounts below 17,000.");
+                        Console.WriteLine("Kindly pay Rs" + DiscountAmount);
+                    } else {
+                        Console.WriteLine("How much do you want to pay by Card?");
+                        int ByCard = Convert.ToInt32(Console.ReadLine());
+                        int RemainingAmount = (int)(DiscountAmount - ByCard); 
+                        Console.WriteLine("Your RemainingAmount is Rs" + RemainingAmount);
+                        Console.WriteLine("Kindly pay RemainingAmount");
+                    }
+                } else if (PaymentMethod == "Cash") {  
+                    Console.WriteLine("How much do you want to pay by Cash?");
+                    int ByCash = Convert.ToInt32(Console.ReadLine());
+                    int RemainingAmount = (int)(DiscountAmount - ByCash); 
+                    Console.WriteLine("Your RemainingAmount is Rs" + RemainingAmount);
+                    Console.WriteLine("Kindly Pay Your Bill: Rs" + RemainingAmount);
+                } else {
+                    Console.WriteLine("Invalid payment method. Please choose either Cash or Card.");
+                }
+            } else {
+                Console.WriteLine("Your amount is too low for card payments.");
+                Console.WriteLine("Kindly pay Rs" + DiscountAmount + " using Cash.");
+            }
+        }
+    }
+}

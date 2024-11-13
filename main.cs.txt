@@ -1,0 +1,76 @@
+using System;
+class HelloWorld {
+  static void Main() {
+//1. POS
+    Console.Write("Enter your 1st item price: ");
+    int item1 = Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Enter your 2nd item price: ");
+    int item2 = Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Enter your 3rd item price: ");
+    int item3 = Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Enter your 4th item price: ");
+    int item4 = Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Enter your 5th item price: ");
+    int item5 = Convert.ToInt32(Console.ReadLine());
+
+    int price = item1 + item2 + item3 + item4 + item5;
+    Console.WriteLine("Your Actual Price is: " + price);
+
+    if (price > 25000) {
+      double discount = 0.25 * price; // 25% discount
+      double discountedPrice = price - discount;
+      Console.WriteLine("Your discounted price is: " + discountedPrice);
+    } else {
+      Console.WriteLine("Your total price is: " + price);
+    }
+
+    // 2. Simple Calculator
+    Console.Write("Enter your First Number: ");
+    int num1 = Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Enter your Second Number: ");
+    int num2 = Convert.ToInt32(Console.ReadLine());
+
+    int add = num1 + num2;
+    int sub = num1 - num2;
+    int mul = num1 * num2;
+    int div = num1 / num2;
+
+    Console.WriteLine("Your Addition Answer is: " + add);
+    Console.WriteLine("Your Subtraction Answer is: " + sub);
+    Console.WriteLine("Your Multiplication Answer is: " + mul);
+    Console.WriteLine("Your Division Answer is: " + div);  
+    
+
+    // 3. Multiplication Table
+    Console.WriteLine("Enter your num: ");
+    int num = Convert.ToInt32(Console.ReadLine());
+
+    int i = 1;
+    int mulby1 = num * i++;
+    int mulby2 = num * i++;
+    int mulby3 = num * i++;
+    int mulby4 = num * i++;
+    int mulby5 = num * i++;
+    int mulby6 = num * i++;
+    int mulby7 = num * i++;
+    int mulby8 = num * i++;
+    int mulby9 = num * i++;
+    int mulby10 = num * i++;
+
+    Console.WriteLine(mulby1);
+    Console.WriteLine(mulby2);
+    Console.WriteLine(mulby3);
+    Console.WriteLine(mulby4);
+    Console.WriteLine(mulby5);
+    Console.WriteLine(mulby6);
+    Console.WriteLine(mulby7);
+    Console.WriteLine(mulby8);
+    Console.WriteLine(mulby9);
+    Console.WriteLine(mulby10);
+  }
+}
